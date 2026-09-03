@@ -6,12 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    // We would typically select the mobile menu overlay here to toggle it
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    if (mobileMenuBtn) {
+    if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
-            console.log('Mobile menu clicked - Implement mobile menu overlay here.');
-            // Toggle mobile menu visibility
+            mobileMenu.classList.toggle('hidden');
         });
     }
 

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limpiezas Gaitán | Servicios Profesionales de Limpieza en Gipuzkoa</title>
-    <meta name="description" content="Especialistas en limpieza de comunidades, oficinas, hostelería y más en Gipuzkoa. Productos ecológicos certificados y más de 12 años de experiencia.">
+    <title>Gaitán Limpieza y Mantenimiento | Servicios Integrales en Gipuzkoa</title>
+    <meta name="description" content="Especialistas en limpieza integral y mantenimiento de comunidades, oficinas e instalaciones en Gipuzkoa. Soluciones técnicas, productos sostenibles y más de 12 años de experiencia.">
     
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,7 +39,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="text-2xl font-bold text-brand-green flex items-center gap-2">
-                        <i data-lucide="leaf"></i> Limpiezas Gaitán
+                        <i data-lucide="wrench"></i> Gaitán Mantenimiento
                     </a>
                 </div>
                 
@@ -70,8 +70,23 @@
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-green">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="servicios.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Servicios</a>
+                <a href="quienes-somos.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Quiénes Somos</a>
+                <a href="blog.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Blog</a>
+                <a href="contacto.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Contacto</a>
+                <div class="mt-4 pt-4 border-t border-gray-200">
+                    <a href="contacto.html" class="block w-full text-center bg-brand-green hover:bg-green-600 text-white px-6 py-3 rounded-full font-medium transition-colors">
+                        Pedir Presupuesto
+                    </a>
                 </div>
             </div>
         </div>
@@ -83,13 +98,13 @@
         <section class="relative bg-brand-light py-20 lg:py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <span class="inline-block py-1 px-3 rounded-full bg-green-100 text-brand-green text-sm font-semibold mb-6">
-                    <i data-lucide="shield-check" class="inline w-4 h-4 mr-1"></i> Productos Ecológicos Certificados
+                    <i data-lucide="shield-check" class="inline w-4 h-4 mr-1"></i> Gestión Integral y Mantenimiento Técnico
                 </span>
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-                    Servicios Profesionales de <br class="hidden md:block" />Limpieza en Gipuzkoa
+                    Limpieza y Mantenimiento <br class="hidden md:block" />Integral en Gipuzkoa
                 </h1>
                 <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                    Más de 12 años de experiencia garantizando espacios impecables, seguros y respetuosos con el medio ambiente.
+                    Más de 12 años cuidando de sus instalaciones. Soluciones completas de higiene, conservación y mantenimiento preventivo.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="contacto.html" class="bg-brand-green hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold text-lg transition-colors shadow-lg hover:shadow-xl">
@@ -109,9 +124,9 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div>
                     <h3 class="text-2xl font-bold text-brand-green mb-4 flex items-center gap-2">
-                        <i data-lucide="leaf"></i> Limpiezas Gaitán
+                        <i data-lucide="wrench"></i> Gaitán
                     </h3>
-                    <p class="text-gray-400">Servicios profesionales de limpieza en Gipuzkoa. Eficiencia, puntualidad y productos ecológicos.</p>
+                    <p class="text-gray-400">Servicios profesionales de limpieza y mantenimiento en Gipuzkoa. Cuidado integral, rapidez y soluciones técnicas a medida.</p>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Contacto</h4>
@@ -123,11 +138,11 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Enlaces</h4>
+                    <h4 class="font-bold mb-4">Servicios</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="quienes-somos.html" class="hover:text-white transition-colors">Quiénes Somos</a></li>
-                        <li><a href="servicios/comunidades.html" class="hover:text-white transition-colors">Comunidades</a></li>
-                        <li><a href="servicios/oficinas-empresas.html" class="hover:text-white transition-colors">Oficinas</a></li>
+                        <li><a href="servicios/mantenimiento-comunidades.html" class="hover:text-white transition-colors">Comunidades y Fincas</a></li>
+                        <li><a href="servicios/mantenimiento-edificios.html" class="hover:text-white transition-colors">Mantenimiento Técnico</a></li>
                         <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
                     </ul>
                 </div>
@@ -141,7 +156,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                &copy; 2026 Limpiezas Gaitán. Todos los derechos reservados.
+                &copy; 2026 Gaitán Limpieza y Mantenimiento. Todos los derechos reservados.
             </div>
         </div>
     </footer>
