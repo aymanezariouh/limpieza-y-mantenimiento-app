@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaitán Limpieza y Mantenimiento | Servicios Integrales en Gipuzkoa</title>
-    <meta name="description" content="Especialistas en limpieza integral y mantenimiento de comunidades, oficinas e instalaciones en Gipuzkoa. Soluciones técnicas, productos sostenibles y más de 12 años de experiencia.">
+    <title>Limpiezas Gaitán | Servicios Profesionales de Limpieza en Gipuzkoa</title>
+    <meta name="description" content="Especialistas en limpieza de comunidades, oficinas, hostelería y más en Gipuzkoa. Productos ecológicos certificados y más de 12 años de experiencia.">
     
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,10 +14,14 @@
                 extend: {
                     colors: {
                         brand: {
-                            green: '#22c55e', // eco-green accents
-                            dark: '#0f172a', // deep navy/charcoal for text
-                            light: '#f8fafc', // soft slate/neutral gray
+                            green: '#539c71', /* main green from screenshots */
+                            teal: '#38bdf8', /* floating button and accents */
+                            dark: '#333333',
+                            light: '#f9f9f9',
                         }
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
                     }
                 }
             }
@@ -29,137 +33,313 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific overrides for visual match */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .hero-text-shadow { text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+        .input-underline { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; outline: none; padding-left: 0; padding-right: 0; box-shadow: none !important; }
+        .input-underline:focus { border-bottom-color: #539c71; }
+        .nav-link.active { border-bottom: 2px solid #539c71; color: #539c71; }
+        .nav-link { border-bottom: 2px solid transparent; transition: all 0.3s ease; }
+        .nav-link:hover { color: #539c71; }
+        .social-btn { transition: transform 0.2s; }
+        .social-btn:hover { transform: translateX(-5px); }
+        
+        /* Language Flags placeholders */
+        .flag-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: white; margin-bottom: 8px; cursor: pointer; border: 1px solid #ddd; }
+        .flag-eu { background: repeating-linear-gradient(45deg, #da291c, #da291c 5px, #fff 5px, #fff 10px, #009b48 10px, #009b48 15px); }
+        .flag-fr { background: linear-gradient(to right, #0055A4 33.3%, #ffffff 33.3%, #ffffff 66.6%, #EF4135 66.6%); }
+        .flag-it { background: linear-gradient(to right, #009246 33.3%, #ffffff 33.3%, #ffffff 66.6%, #CE2B37 66.6%); }
+        .flag-uk { background-color: #012169; position: relative; overflow: hidden;}
+        .flag-uk::before { content: "+"; color: white; font-size: 40px; position: absolute; top: -18px; left: -2px; }
+        .flag-es { background: linear-gradient(to bottom, #AA151B 25%, #F1BF00 25%, #F1BF00 75%, #AA151B 75%); }
+    </style>
 </head>
-<body class="bg-white text-brand-dark antialiased">
-    
-    <!-- Navbar Placeholder -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+<body class="bg-white text-gray-700 antialiased relative">
+
+    <!-- 1. Fixed Floating Elements -->
+    <!-- Left: Languages -->
+    <div class="fixed left-0 top-1/2 -translate-y-1/2 z-50 p-2 flex flex-col shadow-sm bg-white/50 backdrop-blur-sm rounded-r-lg">
+        <div class="flag-icon flag-eu" title="Basque"></div>
+        <div class="flag-icon flag-fr" title="French"></div>
+        <div class="flag-icon flag-it" title="Italian"></div>
+        <div class="flag-icon flag-uk" title="English"></div>
+        <div class="flag-icon flag-es" title="Spanish"></div>
+    </div>
+
+    <!-- Right: Social & Back to top -->
+    <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
+        <a href="#" class="social-btn bg-[#3b5998] text-white p-3 rounded-l-md shadow-md flex items-center justify-center w-10 h-10"><i data-lucide="facebook" class="w-5 h-5 fill-current"></i></a>
+        <a href="#" class="social-btn bg-[#25D366] text-white p-3 rounded-l-md shadow-md flex items-center justify-center w-10 h-10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+        <a href="#" class="social-btn bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white p-3 rounded-l-md shadow-md flex items-center justify-center w-10 h-10"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+    </div>
+    <!-- Back to top (bottom right) -->
+    <a href="#" class="fixed right-4 bottom-4 z-50 bg-[#38bdf8] text-white p-3 rounded-full shadow-lg hover:bg-[#22d3ee] transition-colors">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </a>
+
+    <!-- 2. Header & Branding -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-brand-green flex items-center gap-2">
-                        <i data-lucide="wrench"></i> Gaitán Mantenimiento
-                    </a>
+                <div class="flex items-center gap-3">
+                    <!-- Simulated two-tone logo -->
+                    <div class="text-4xl font-black text-[#539c71] tracking-tighter leading-none flex flex-col relative">
+                        <span class="text-[#38bdf8] relative z-10 -mb-2">G</span>
+                        <span class="ml-4">G</span>
+                    </div>
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-xl font-light text-[#38bdf8] tracking-widest">Gaitan</span>
+                        <span class="text-sm font-bold text-[#539c71] tracking-widest uppercase">Garbiketak</span>
+                    </div>
                 </div>
-                
+
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <div class="relative group">
-                        <button class="text-brand-dark hover:text-brand-green font-medium flex items-center gap-1">
-                            Servicios <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <!-- Dropdown (hidden by default, can be toggled via JS/CSS) -->
-                    </div>
-                    <a href="quienes-somos.html" class="text-brand-dark hover:text-brand-green font-medium">Quiénes Somos</a>
-                    <a href="blog.html" class="text-brand-dark hover:text-brand-green font-medium">Blog</a>
-                    <a href="contacto.html" class="text-brand-dark hover:text-brand-green font-medium">Contacto</a>
-                </div>
-                
-                <!-- CTA & Contact (Desktop) -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <div class="flex flex-col text-right text-sm">
-                        <a href="tel:+34943013481" class="font-medium hover:text-brand-green">943 01 34 81</a>
-                        <a href="tel:+34649220402" class="font-medium hover:text-brand-green">649 22 04 02</a>
-                    </div>
-                    <a href="contacto.html" class="bg-brand-green hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors">
-                        Pedir Presupuesto
-                    </a>
-                </div>
+                <nav class="hidden lg:flex items-center space-x-6 h-full">
+                    <a href="index.html" class="nav-link active h-full flex items-center px-1 text-sm font-medium tracking-wide">INICIO</a>
+                    <a href="quienes-somos.html" class="nav-link h-full flex items-center px-1 text-sm font-medium text-gray-600 tracking-wide">QUIENES SOMOS</a>
+                    <a href="servicios.html" class="nav-link h-full flex items-center px-1 text-sm font-medium text-gray-600 tracking-wide">SERVICIOS</a>
+                    <a href="covid.html" class="nav-link h-full flex items-center px-1 text-sm font-medium text-gray-600 tracking-wide">COVID-19</a>
+                    <a href="blog.html" class="nav-link h-full flex items-center px-1 text-sm font-medium text-gray-600 tracking-wide">BLOG</a>
+                    <a href="contacto.html" class="nav-link h-full flex items-center px-1 text-sm font-medium text-gray-600 tracking-wide">CONTACTO</a>
+                </nav>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-green">
-                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
-                    </button>
-                </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-dark hover:text-brand-green p-2">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
             </div>
         </div>
-
+        
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="servicios.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Servicios</a>
-                <a href="quienes-somos.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Quiénes Somos</a>
-                <a href="blog.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Blog</a>
-                <a href="contacto.html" class="block px-3 py-2 text-base font-medium text-brand-dark hover:text-brand-green hover:bg-gray-50 rounded-md">Contacto</a>
-                <div class="mt-4 pt-4 border-t border-gray-200">
-                    <a href="contacto.html" class="block w-full text-center bg-brand-green hover:bg-green-600 text-white px-6 py-3 rounded-full font-medium transition-colors">
-                        Pedir Presupuesto
-                    </a>
-                </div>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0">
+            <div class="px-4 py-2 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-brand-green font-bold">INICIO</a>
+                <a href="quienes-somos.html" class="block px-3 py-2 text-gray-600 hover:text-brand-green">QUIENES SOMOS</a>
+                <a href="servicios.html" class="block px-3 py-2 text-gray-600 hover:text-brand-green">SERVICIOS</a>
+                <a href="contacto.html" class="block px-3 py-2 text-gray-600 hover:text-brand-green">CONTACTO</a>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section Placeholder -->
-        <section class="relative bg-brand-light py-20 lg:py-32">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span class="inline-block py-1 px-3 rounded-full bg-green-100 text-brand-green text-sm font-semibold mb-6">
-                    <i data-lucide="shield-check" class="inline w-4 h-4 mr-1"></i> Gestión Integral y Mantenimiento Técnico
-                </span>
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-                    Limpieza y Mantenimiento <br class="hidden md:block" />Integral en Gipuzkoa
+        <!-- 3. Hero Section (Full bleed) -->
+        <section class="relative h-[600px] w-full overflow-hidden flex items-center justify-center">
+            <!-- Background Image -->
+            <div class="absolute inset-0 w-full h-full">
+                <img src="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=2000" alt="Dew on grass" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black/20"></div>
+            </div>
+            
+            <!-- Content -->
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 flex justify-between items-center">
+                <!-- Left Arrow -->
+                <button class="text-white/70 hover:text-white transition-colors">
+                    <i data-lucide="chevron-left" class="w-12 h-12"></i>
+                </button>
+                
+                <!-- Title -->
+                <h1 class="text-6xl md:text-8xl font-bold text-white hero-text-shadow tracking-tight text-center">
+                    Limpiezas Gaitán
                 </h1>
-                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                    Más de 12 años cuidando de sus instalaciones. Soluciones completas de higiene, conservación y mantenimiento preventivo.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="contacto.html" class="bg-brand-green hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold text-lg transition-colors shadow-lg hover:shadow-xl">
-                        Pedir Presupuesto
-                    </a>
-                    <a href="#servicios" class="bg-white hover:bg-gray-50 text-brand-dark border border-gray-200 px-8 py-3 rounded-full font-bold text-lg transition-colors">
-                        Ver Servicios
-                    </a>
+                
+                <!-- Right Arrow -->
+                <button class="text-white/70 hover:text-white transition-colors">
+                    <i data-lucide="chevron-right" class="w-12 h-12"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. About & Environmental Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border border-gray-200 rounded-sm p-1 md:p-2 bg-white shadow-sm flex flex-col md:flex-row gap-8 items-start">
+                    
+                    <!-- Left Column: Image and Eco Badge -->
+                    <div class="w-full md:w-5/12 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800" alt="Hands holding wooden pellets and green sprout" class="w-full h-auto object-cover mb-6">
+                        <p class="text-center text-[#539c71] text-[15px] leading-relaxed px-4 font-medium">
+                            Comprometidos con el medio ambiente y concienciados en el uso de productos ecológicos autorizados por el Ministerio de Sanidad y la OMS, protegiendo así la salud de nuestro personal y del planeta.
+                        </p>
+                    </div>
+
+                    <!-- Right Column: Text & Checklist -->
+                    <div class="w-full md:w-7/12 py-4 pr-6">
+                        <h2 class="text-4xl font-bold text-[#539c71] mb-6 inline-block border-b-2 border-[#38bdf8] pb-2 uppercase tracking-wide">Limpiezas Gaitán</h2>
+                        
+                        <div class="text-gray-600 text-[15px] space-y-4 mb-8 leading-relaxed">
+                            <p>Servicios Integrales de limpieza Gaitán SL es una pequeña empresa constituida en Errenteria. Después de haber trabajado por cuenta ajena por más de 12 años en el sector de la limpieza, desarrollando así nuestros conocimientos para poder realizar mejor esta labor y ofrecer nuestros servicios a distintas personas y empresas que requieren de nuestra asistencia.</p>
+                            <p>Con vocación y dedicación formamos un buen equipo de profesionales del sector de la limpieza integral, personas sencillas y dedicadas al trabajo.</p>
+                        </div>
+
+                        <!-- 2-Column Checklist -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-sm text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#38bdf8] rounded-full p-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-white"></i></div>
+                                <span>Limpieza de Comunidades</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#38bdf8] rounded-full p-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-white"></i></div>
+                                <span>Limpieza de hoteles</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#38bdf8] rounded-full p-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-white"></i></div>
+                                <span>Limpieza de domicilios</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#38bdf8] rounded-full p-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-white"></i></div>
+                                <span>Limpieza de Oficinas</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#38bdf8] rounded-full p-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-white"></i></div>
+                                <span>Limpieza de garajes.</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#38bdf8] rounded-full p-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-white"></i></div>
+                                <span>Limpieza de restaurantes</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Footer Placeholder -->
-    <footer class="bg-brand-dark text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <h3 class="text-2xl font-bold text-brand-green mb-4 flex items-center gap-2">
-                        <i data-lucide="wrench"></i> Gaitán
-                    </h3>
-                    <p class="text-gray-400">Servicios profesionales de limpieza y mantenimiento en Gipuzkoa. Cuidado integral, rapidez y soluciones técnicas a medida.</p>
+        <!-- 5. Services Section -->
+        <section class="py-16 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Heading -->
+                <h2 class="text-3xl md:text-4xl font-bold text-[#539c71] uppercase tracking-wide inline-block relative mb-16">
+                    Algunos de nuestros servicios
+                    <div class="absolute w-3/4 h-[2px] bg-[#38bdf8] bottom-[-15px] left-1/2 -translate-x-1/2"></div>
+                </h2>
+
+                <!-- 4-Column Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white shadow-md flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=600" alt="Limpieza de restaurantes" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-grow flex items-center justify-center">
+                            <h3 class="text-xl text-[#539c71] font-medium text-center">Limpieza de<br>restaurantes</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white shadow-md flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600" alt="Limpieza de domicilios" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-grow flex items-center justify-center">
+                            <h3 class="text-xl text-[#539c71] font-medium text-center">Limpieza de<br>domicilios</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white shadow-md flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=600" alt="Limpieza con vapor" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-grow flex items-center justify-center">
+                            <h3 class="text-xl text-[#539c71] font-medium text-center">Limpieza con vapor</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white shadow-md flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" alt="Limpieza de comunidades" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-grow flex items-center justify-center">
+                            <h3 class="text-xl text-[#539c71] font-medium text-center">Limpieza de<br>comunidades</h3>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="tel:+34943013481" class="hover:text-brand-green flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> 943 01 34 81</a></li>
-                        <li><a href="tel:+34649220402" class="hover:text-brand-green flex items-center gap-2"><i data-lucide="smartphone" class="w-4 h-4"></i> 649 22 04 02</a></li>
-                        <li><a href="mailto:info@limpiezasgaitan.com" class="hover:text-brand-green flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> info@limpiezasgaitan.com</a></li>
-                        <li class="flex items-start gap-2 mt-4"><i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0"></i> Calle Morronguilleta 10, <br>Errenteria, Gipuzkoa</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Servicios</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="quienes-somos.html" class="hover:text-white transition-colors">Quiénes Somos</a></li>
-                        <li><a href="servicios/mantenimiento-comunidades.html" class="hover:text-white transition-colors">Comunidades y Fincas</a></li>
-                        <li><a href="servicios/mantenimiento-edificios.html" class="hover:text-white transition-colors">Mantenimiento Técnico</a></li>
-                        <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="aviso-legal.html" class="hover:text-white transition-colors">Aviso Legal</a></li>
-                        <li><a href="politica-de-privacidad.html" class="hover:text-white transition-colors">Política de Privacidad</a></li>
-                        <li><a href="politica-de-cookies.html" class="hover:text-white transition-colors">Política de Cookies</a></li>
-                    </ul>
+
+                <!-- Button -->
+                <a href="servicios.html" class="inline-block bg-[#38bdf8] hover:bg-[#22d3ee] text-white font-semibold py-3 px-8 rounded-full uppercase text-sm tracking-wide transition-colors">
+                    Más información
+                </a>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section -->
+        <section class="py-20 bg-brand-light border-t border-gray-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-12 lg:gap-24">
+                    
+                    <!-- Left: Header -->
+                    <div class="w-full md:w-5/12 text-center md:text-right">
+                        <h2 class="text-3xl font-light text-[#539c71] mb-4 uppercase tracking-wider">Solicita Información</h2>
+                        <p class="text-gray-500 text-sm leading-relaxed max-w-xs ml-auto">
+                            Ponte en contacto con nosotros para obtener más información sobre la empresa y cada uno de los servicios que tenemos para ti.
+                        </p>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="w-full md:w-7/12">
+                        <form action="#" method="POST" class="space-y-6">
+                            
+                            <!-- Inputs -->
+                            <div>
+                                <label for="nombre" class="sr-only">Nombre</label>
+                                <input type="text" id="nombre" placeholder="Nombre" class="w-full bg-transparent input-underline py-2 text-sm text-gray-700">
+                            </div>
+                            <div>
+                                <label for="telefono" class="sr-only">Teléfono</label>
+                                <input type="tel" id="telefono" placeholder="Teléfono" class="w-full bg-transparent input-underline py-2 text-sm text-gray-700">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" id="email" placeholder="Email" class="w-full bg-transparent input-underline py-2 text-sm text-gray-700">
+                            </div>
+                            <div>
+                                <label for="mensaje" class="sr-only">Mensaje</label>
+                                <textarea id="mensaje" rows="3" placeholder="Mensaje" class="w-full bg-transparent input-underline py-2 text-sm text-gray-700 resize-none"></textarea>
+                            </div>
+
+                            <!-- Privacy & Checkbox -->
+                            <div class="pt-4">
+                                <label class="flex items-start gap-2 text-sm text-gray-600 cursor-pointer">
+                                    <input type="checkbox" class="mt-1 border-gray-300 rounded">
+                                    <span>He leído y acepto el <a href="aviso-legal.html" class="underline hover:text-brand-green">aviso legal</a> y la <a href="politica-de-privacidad.html" class="underline hover:text-brand-green">política de privacidad</a>.</span>
+                                </label>
+                            </div>
+
+                            <!-- Simulated reCAPTCHA -->
+                            <div class="border border-gray-300 bg-gray-50 p-3 rounded w-64 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" class="w-6 h-6 border-gray-300 rounded-sm bg-white">
+                                    <span class="text-sm font-medium">Je ne suis pas un robot</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <i data-lucide="refresh-cw" class="w-6 h-6 text-blue-500"></i>
+                                    <span class="text-[8px] text-gray-500 mt-1">reCAPTCHA</span>
+                                </div>
+                            </div>
+
+                            <!-- RGPD Disclaimer -->
+                            <p class="text-xs text-gray-500 leading-tight">
+                                A los efectos previstos en el Reglamento General de Protección de Datos (RGPD), se le informa que los datos personales que nos facilita a través de este formulario se incorporarán a un fichero de la entidad SERVICIOS INTEGRALES GAITAN SL. Puede ver información detallada en nuestro <a href="aviso-legal.html" class="font-semibold text-gray-600">Aviso Legal</a> y <a href="politica-de-privacidad.html" class="font-semibold text-gray-600">Política de Privacidad</a>.
+                            </p>
+
+                            <!-- Submit Button -->
+                            <div>
+                                <button type="submit" class="border border-gray-300 hover:border-brand-green hover:text-brand-green bg-white text-gray-600 px-8 py-2 text-sm uppercase tracking-wide transition-colors rounded-sm">
+                                    Enviar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                &copy; 2026 Gaitán Limpieza y Mantenimiento. Todos los derechos reservados.
-            </div>
-        </div>
-    </footer>
+        </section>
+
+    </main>
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>
