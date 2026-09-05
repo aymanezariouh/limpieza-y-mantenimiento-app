@@ -78,6 +78,42 @@
         .img-zoom-container img { transition: transform 0.7s ease; }
         .img-zoom-container:hover img { transform: scale(1.05); }
     </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Servicios Integrales Gaitán S.L.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
+      "telephone": "+34943013481",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Morronguilleta 10",
+        "addressLocality": "Errenteria",
+        "addressRegion": "Gipuzkoa",
+        "postalCode": "20100",
+        "addressCountry": "ES"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Gipuzkoa"
+      },
+      "description": "Servicios profesionales de limpieza integral en Gipuzkoa. Especialistas en comunidades, oficinas, domicilios y hostelería con productos ecológicos.",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
 </head>
 <body class="bg-brand-light text-gray-700 antialiased relative">
 
