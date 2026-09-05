@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpieza de Comunidades | Limpiezas Gaitán</title>
+    <meta name="description" content="Mantenimiento integral de comunidades de vecinos en Gipuzkoa. Limpieza de portales, escaleras, ascensores y zonas comunes.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], },
+                    colors: { brand: { green: '#10b981', teal: '#06b6d4', dark: '#0f172a', light: '#f8fafc', } }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(to right, #10b981, #06b6d4); }
+        .nav-link { position: relative; padding-bottom: 4px; color: #475569; transition: color 0.3s ease; font-weight: 500; font-size: 0.875rem; letter-spacing: 0.05em; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #10b981; transition: width 0.3s ease; }
+        .nav-link:hover { color: #0f172a; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #0f172a; }
+        .lang-pill { transition: all 0.3s ease; opacity: 0.7; }
+        .lang-pill:hover { opacity: 1; transform: translateX(5px); }
+        /* Accordion transition */
+        .accordion-content { transition: max-height 0.3s ease-out; }
+    </style>
+</head>
+<body class="bg-brand-light text-gray-700 antialiased relative">
+
+    <!-- 1. Floating Action Bars -->
+    <div class="fixed left-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 pl-2 group">
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">EU</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-brand-green ring-2 ring-brand-green/20">ES</div>
+    </div>
+    <div class="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+    </div>
+    <button id="back-to-top" class="fixed right-4 bottom-8 z-50 bg-gradient-to-r from-brand-green to-brand-teal text-white p-3.5 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 invisible">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- 2. Header & Branding -->
+    <header class="glass-nav border-b border-gray-100 sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="../index.html" class="flex items-center gap-3 group">
+                    <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-brand-green/10 to-brand-teal/10 group-hover:scale-105 transition-transform">
+                        <i data-lucide="droplets" class="w-7 h-7 text-brand-green absolute"></i>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="text-2xl font-bold text-brand-dark tracking-tight">Limpiezas <span class="text-gradient">Gaitán</span></span>
+                        <span class="text-[10px] font-semibold text-gray-400 tracking-widest uppercase mt-1">Servicios Integrales</span>
+                    </div>
+                </a>
+
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="../index.html" class="nav-link uppercase">Inicio</a>
+                    <a href="../quienes-somos.html" class="nav-link uppercase">Quiénes Somos</a>
+                    <div class="relative group">
+                        <a href="#" class="nav-link active uppercase cursor-default flex items-center gap-1">Servicios <i data-lucide="chevron-down" class="w-4 h-4"></i></a>
+                        <!-- Dropdown -->
+                        <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-2">
+                            <a href="comunidades.html" class="px-4 py-2 text-sm text-brand-green bg-gray-50 font-medium">Comunidades</a>
+                            <a href="domicilios.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Domicilios</a>
+                            <a href="oficinas-empresas.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Oficinas y Empresas</a>
+                            <a href="hosteleria.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Hostelería</a>
+                            <a href="garajes.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Garajes</a>
+                            <a href="limpieza-vapor.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Limpieza a Vapor</a>
+                            <a href="fin-de-obra.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Fin de Obra</a>
+                        </div>
+                    </div>
+                    <a href="../contacto.html" class="nav-link uppercase">Contacto</a>
+                </nav>
+
+                <div class="hidden lg:block">
+                    <a href="../contacto.html" class="px-6 py-2.5 rounded-full bg-brand-dark text-white font-medium text-sm hover:bg-gray-800 transition-colors shadow-md">Presupuesto</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-dark hover:text-brand-green p-2 transition-colors">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0 origin-top">
+            <div class="px-6 py-6 space-y-4">
+                <a href="../index.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Inicio</a>
+                <a href="../quienes-somos.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Quiénes Somos</a>
+                <div class="pl-4 border-l-2 border-brand-green space-y-2">
+                    <a href="comunidades.html" class="block text-brand-green font-bold">Comunidades</a>
+                    <a href="domicilios.html" class="block text-gray-600 hover:text-brand-green">Domicilios</a>
+                    <!-- Skipped others for brevity in mobile menu, or list them all -->
+                </div>
+                <a href="../contacto.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pb-24">
+        <!-- Hero Section -->
+        <section class="relative bg-brand-dark text-white py-24 overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=2000" alt="Comunidad" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark to-brand-dark/80"></div>
+            
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-green/20 text-brand-green mb-6">
+                    <i data-lucide="building-2" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Limpieza de <span class="text-gradient">Comunidades</span></h1>
+                <p class="text-lg md:text-xl text-gray-300 font-light mb-10 max-w-2xl mx-auto">Mantenimiento integral para que tu portal y zonas comunes luzcan siempre impecables y libres de bacterias.</p>
+                <a href="../contacto.html?servicio=comunidades" class="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-brand-green to-brand-teal text-white font-bold tracking-wide hover:shadow-lg hover:shadow-brand-green/30 transition-transform hover:-translate-y-1">
+                    Pedir Presupuesto
+                </a>
+            </div>
+        </section>
+
+        <!-- Qué Incluye -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-brand-dark">¿Qué Incluye el Servicio?</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-6 bg-brand-light rounded-2xl border border-gray-100 text-center">
+                        <i data-lucide="door-open" class="w-10 h-10 text-brand-teal mx-auto mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Portales y Cristaleras</h4>
+                        <p class="text-sm text-gray-500 font-light">Eliminación de huellas, limpieza profunda de puertas de acceso y felpudos.</p>
+                    </div>
+                    <div class="p-6 bg-brand-light rounded-2xl border border-gray-100 text-center">
+                        <i data-lucide="navigation" class="w-10 h-10 text-brand-teal mx-auto mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Escaleras y Ascensores</h4>
+                        <p class="text-sm text-gray-500 font-light">Fregado higienizante, desinfección de botoneras y pasamanos.</p>
+                    </div>
+                    <div class="p-6 bg-brand-light rounded-2xl border border-gray-100 text-center">
+                        <i data-lucide="trash-2" class="w-10 h-10 text-brand-teal mx-auto mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Gestión de Residuos</h4>
+                        <p class="text-sm text-gray-500 font-light">Retirada de basura de zonas comunes si el edificio dispone de cuartos propios.</p>
+                    </div>
+                    <div class="p-6 bg-brand-light rounded-2xl border border-gray-100 text-center">
+                        <i data-lucide="sun" class="w-10 h-10 text-brand-teal mx-auto mb-4"></i>
+                        <h4 class="font-bold text-brand-dark mb-2">Patios y Terrazas</h4>
+                        <p class="text-sm text-gray-500 font-light">Barrido y mantenimiento periódico de áreas de recreo comunitarias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="py-20 bg-brand-light">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-brand-dark text-center mb-16">Metodología de Trabajo</h2>
+                <div class="flex flex-col md:flex-row justify-between gap-8 relative">
+                    <!-- Connector Line -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-brand-green to-brand-teal -translate-y-1/2 z-0"></div>
+                    
+                    <div class="relative z-10 flex flex-col items-center text-center max-w-xs mx-auto bg-brand-light p-4">
+                        <div class="w-16 h-16 rounded-full bg-brand-dark text-white font-bold text-xl flex items-center justify-center mb-4 shadow-xl border-4 border-brand-light">1</div>
+                        <h4 class="font-bold text-brand-dark mb-2">Contacto y Visita Técnica</h4>
+                        <p class="text-sm text-gray-500 font-light">Evaluamos in situ el volumen y las necesidades de la finca.</p>
+                    </div>
+                    <div class="relative z-10 flex flex-col items-center text-center max-w-xs mx-auto bg-brand-light p-4">
+                        <div class="w-16 h-16 rounded-full bg-brand-green text-white font-bold text-xl flex items-center justify-center mb-4 shadow-xl border-4 border-brand-light">2</div>
+                        <h4 class="font-bold text-brand-dark mb-2">Plan a Medida</h4>
+                        <p class="text-sm text-gray-500 font-light">Establecemos un calendario de limpieza (diario, semanal...) y asignamos operarios.</p>
+                    </div>
+                    <div class="relative z-10 flex flex-col items-center text-center max-w-xs mx-auto bg-brand-light p-4">
+                        <div class="w-16 h-16 rounded-full bg-brand-teal text-white font-bold text-xl flex items-center justify-center mb-4 shadow-xl border-4 border-brand-light">3</div>
+                        <h4 class="font-bold text-brand-dark mb-2">Ejecución y Control</h4>
+                        <p class="text-sm text-gray-500 font-light">Servicio garantizado con controles periódicos de calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-brand-dark text-center mb-12">Preguntas Frecuentes</h2>
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-trigger w-full px-6 py-4 text-left font-bold text-brand-dark flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none">
+                            <span>¿Sustituyen a la persona de limpieza si se va de vacaciones?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-teal transition-transform duration-300 transform accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden bg-white">
+                            <p class="p-6 text-gray-600 font-light text-sm">Absolutamente. Nosotros nos encargamos de cubrir vacaciones, bajas médicas y días libres para que el servicio nunca se interrumpa en la comunidad.</p>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-trigger w-full px-6 py-4 text-left font-bold text-brand-dark flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none">
+                            <span>¿Los productos están incluidos en la cuota?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-teal transition-transform duration-300 transform accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden bg-white">
+                            <p class="p-6 text-gray-600 font-light text-sm">Sí, proporcionamos toda la maquinaria y los productos ecológicos certificados necesarios para realizar el servicio correctamente.</p>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="accordion-trigger w-full px-6 py-4 text-left font-bold text-brand-dark flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none">
+                            <span>¿Con qué frecuencia recomiendan limpiar las escaleras?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-teal transition-transform duration-300 transform accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden bg-white">
+                            <p class="p-6 text-gray-600 font-light text-sm">Depende del tráfico y tamaño de la comunidad, pero habitualmente realizamos 1 o 2 visitas por semana para el fregado completo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="py-16 bg-gradient-to-r from-brand-dark to-gray-900 text-white text-center">
+            <h2 class="text-3xl font-bold mb-6">¿Hablamos sobre tu comunidad?</h2>
+            <a href="../contacto.html?servicio=comunidades" class="inline-block px-8 py-3 rounded-full bg-brand-green text-white font-bold hover:bg-green-400 transition-colors">Solicitar Presupuesto Gratuito</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            &copy; 2026 Servicios Integrales Gaitán S.L. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Inline script to handle accordion rotation
+        document.querySelectorAll('.accordion-trigger').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const icon = btn.querySelector('.accordion-icon');
+                if (btn.classList.contains('active')) {
+                    icon.classList.add('rotate-180');
+                } else {
+                    icon.classList.remove('rotate-180');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
