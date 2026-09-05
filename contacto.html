@@ -98,7 +98,19 @@
                 <nav class="hidden lg:flex items-center space-x-8">
                     <a href="index.html" class="nav-link uppercase">Inicio</a>
                     <a href="quienes-somos.html" class="nav-link uppercase">Quiénes Somos</a>
-                    <a href="servicios.html" class="nav-link uppercase">Servicios</a>
+                    <div class="relative group">
+                        <a href="#" class="nav-link uppercase cursor-default flex items-center gap-1">Servicios <i data-lucide="chevron-down" class="w-4 h-4"></i></a>
+                        <!-- Dropdown -->
+                        <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-2">
+                            <a href="servicios/comunidades.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Comunidades</a>
+                            <a href="servicios/domicilios.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Domicilios</a>
+                            <a href="servicios/oficinas-empresas.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Oficinas y Empresas</a>
+                            <a href="servicios/hosteleria.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Hostelería</a>
+                            <a href="servicios/garajes.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Garajes</a>
+                            <a href="servicios/limpieza-vapor.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Limpieza a Vapor</a>
+                            <a href="servicios/fin-de-obra.html" class="px-4 py-2 text-sm text-gray-600 hover:text-brand-green hover:bg-gray-50 transition-colors">Fin de Obra</a>
+                        </div>
+                    </div>
                     <a href="covid.html" class="nav-link uppercase">Covid-19</a>
                     <a href="blog.html" class="nav-link uppercase">Blog</a>
                     <a href="contacto.html" class="nav-link active uppercase">Contacto</a>
@@ -123,7 +135,16 @@
             <div class="px-6 py-6 space-y-4">
                 <a href="index.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Inicio</a>
                 <a href="quienes-somos.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Quiénes Somos</a>
-                <a href="servicios.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Servicios</a>
+                <div class="pl-4 border-l-2 border-brand-green space-y-2 py-2">
+                    <span class="block text-lg font-bold text-gray-600 mb-2">Servicios</span>
+                    <a href="servicios/comunidades.html" class="block text-gray-600 hover:text-brand-green">Comunidades</a>
+                    <a href="servicios/domicilios.html" class="block text-gray-600 hover:text-brand-green">Domicilios</a>
+                    <a href="servicios/oficinas-empresas.html" class="block text-gray-600 hover:text-brand-green">Oficinas y Empresas</a>
+                    <a href="servicios/hosteleria.html" class="block text-gray-600 hover:text-brand-green">Hostelería</a>
+                    <a href="servicios/garajes.html" class="block text-gray-600 hover:text-brand-green">Garajes</a>
+                    <a href="servicios/limpieza-vapor.html" class="block text-gray-600 hover:text-brand-green">Limpieza a Vapor</a>
+                    <a href="servicios/fin-de-obra.html" class="block text-gray-600 hover:text-brand-green">Fin de Obra</a>
+                </div>
                 <a href="contacto.html" class="block text-lg font-bold text-brand-green">Contacto</a>
                 <div class="pt-4 mt-2 border-t border-gray-100">
                     <a href="contacto.html" class="block text-center px-6 py-3 rounded-full bg-brand-dark text-white font-medium hover:bg-gray-800">
