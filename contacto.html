@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Limpiezas Gaitán</title>
+    <meta name="description" content="Contacta con Limpiezas Gaitán para solicitar tu presupuesto de limpieza integral en Gipuzkoa sin compromiso.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#10b981',
+                            teal: '#06b6d4',
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(to right, #10b981, #06b6d4); }
+        
+        .nav-link { position: relative; padding-bottom: 4px; color: #475569; transition: color 0.3s ease; font-weight: 500; font-size: 0.875rem; letter-spacing: 0.05em; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #10b981; transition: width 0.3s ease; }
+        .nav-link:hover { color: #0f172a; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #0f172a; }
+        
+        .lang-pill { transition: all 0.3s ease; opacity: 0.7; }
+        .lang-pill:hover { opacity: 1; transform: translateX(5px); }
+        
+        .input-premium { border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 0.75rem 1rem; outline: none; transition: all 0.3s ease; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .input-premium:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); }
+    </style>
+</head>
+<body class="bg-brand-light text-gray-700 antialiased relative">
+
+    <!-- 1. Floating Action Bars -->
+    <!-- Left: Languages -->
+    <div class="fixed left-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 pl-2 group">
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">EU</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">FR</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">IT</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">EN</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-brand-green ring-2 ring-brand-green/20">ES</div>
+    </div>
+
+    <!-- Right: Social & Back to top -->
+    <div class="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-600 hover:text-blue-600 hover:scale-110 transition-all duration-300"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-600 hover:text-pink-500 hover:scale-110 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+    </div>
+
+    <button id="back-to-top" class="fixed right-4 bottom-8 z-50 bg-gradient-to-r from-brand-green to-brand-teal text-white p-3.5 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 invisible">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- 2. Header & Branding -->
+    <header class="glass-nav border-b border-gray-100 sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-brand-green/10 to-brand-teal/10 group-hover:scale-105 transition-transform">
+                        <i data-lucide="droplets" class="w-7 h-7 text-brand-green absolute"></i>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="text-2xl font-bold text-brand-dark tracking-tight">Limpiezas <span class="text-gradient">Gaitán</span></span>
+                        <span class="text-[10px] font-semibold text-gray-400 tracking-widest uppercase mt-1">Servicios Integrales</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link uppercase">Inicio</a>
+                    <a href="quienes-somos.html" class="nav-link uppercase">Quiénes Somos</a>
+                    <a href="servicios.html" class="nav-link uppercase">Servicios</a>
+                    <a href="covid.html" class="nav-link uppercase">Covid-19</a>
+                    <a href="blog.html" class="nav-link uppercase">Blog</a>
+                    <a href="contacto.html" class="nav-link active uppercase">Contacto</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="hidden lg:block">
+                    <a href="contacto.html" class="px-6 py-2.5 rounded-full bg-brand-dark text-white font-medium text-sm hover:bg-gray-800 transition-colors shadow-md">
+                        Presupuesto
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-dark hover:text-brand-green p-2 transition-colors">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0 origin-top">
+            <div class="px-6 py-6 space-y-4">
+                <a href="index.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Inicio</a>
+                <a href="quienes-somos.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Quiénes Somos</a>
+                <a href="servicios.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Servicios</a>
+                <a href="contacto.html" class="block text-lg font-bold text-brand-green">Contacto</a>
+                <div class="pt-4 mt-2 border-t border-gray-100">
+                    <a href="contacto.html" class="block text-center px-6 py-3 rounded-full bg-brand-dark text-white font-medium hover:bg-gray-800">
+                        Pedir Presupuesto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toast Notification (Hidden by default) -->
+    <div id="form-toast" class="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-brand-dark text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-4 transition-all duration-300 opacity-0 invisible translate-y-[-20px]">
+        <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-green"></i>
+        <div>
+            <h4 class="font-bold text-sm">¡Mensaje enviado!</h4>
+            <p class="text-xs text-gray-300">Nos pondremos en contacto contigo pronto.</p>
+        </div>
+    </div>
+
+    <main class="pb-24">
+        <!-- Header Section -->
+        <section class="bg-white py-16 border-b border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-brand-dark mb-6">Solicita tu <span class="text-gradient">Presupuesto</span></h1>
+                <p class="text-lg text-gray-500 font-light max-w-2xl mx-auto">Nuestro equipo de profesionales evaluará tus necesidades para ofrecerte una solución a medida, sin ningún compromiso.</p>
+            </div>
+        </section>
+
+        <section class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12 bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                    
+                    <!-- Left: Contact Details & Map -->
+                    <div class="w-full lg:w-5/12 bg-brand-dark text-white flex flex-col relative overflow-hidden">
+                        <!-- Decorative bg -->
+                        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-brand-teal/20 rounded-full blur-3xl pointer-events-none"></div>
+                        
+                        <div class="p-10 md:p-14 flex-grow relative z-10">
+                            <h2 class="text-3xl font-bold mb-8">Información de Contacto</h2>
+                            
+                            <div class="space-y-8">
+                                <a href="tel:+34943013481" class="flex items-start gap-4 group hover:text-brand-teal transition-colors">
+                                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-teal/20 transition-colors">
+                                        <i data-lucide="phone" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Oficina Central</h5>
+                                        <p class="text-lg">943 01 34 81</p>
+                                    </div>
+                                </a>
+
+                                <a href="tel:+34649220402" class="flex items-start gap-4 group hover:text-brand-green transition-colors">
+                                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-green/20 transition-colors">
+                                        <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Móvil / WhatsApp</h5>
+                                        <p class="text-lg">649 22 04 02</p>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:info@limpiezasgaitan.com" class="flex items-start gap-4 group hover:text-brand-teal transition-colors">
+                                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-teal/20 transition-colors">
+                                        <i data-lucide="mail" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Correo Electrónico</h5>
+                                        <p class="text-lg">info@limpiezasgaitan.com</p>
+                                    </div>
+                                </a>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Ubicación</h5>
+                                        <p class="text-lg leading-snug">Calle Morronguilleta 10<br>Errenteria, Gipuzkoa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Embedded Maps Placeholder -->
+                        <div class="h-64 w-full bg-gray-200 relative">
+                            <!-- In a real site, this would be a Google Maps iframe -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.0132338165995!2d-1.905634584218844!3d43.31393667913417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b14cb5b42dcd%3A0xd68c1762c2f74154!2sMorronguilleta%20Kalea%2C%2010%2C%2020100%20Errenteria%2C%20Gipuzkoa!5e0!3m2!1sen!2ses!4v1689100000000!5m2!1sen!2ses" 
+                                class="absolute inset-0 w-full h-full border-0" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="w-full lg:w-7/12 p-10 md:p-14">
+                        <h3 class="text-2xl font-bold text-brand-dark mb-8">Envíanos un mensaje</h3>
+                        
+                        <form id="contact-form" action="#" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo <span class="text-red-500">*</span></label>
+                                    <input type="text" id="nombre" name="nombre" required class="w-full input-premium bg-gray-50 focus:bg-white text-sm" placeholder="Tu nombre">
+                                </div>
+                                <div>
+                                    <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Teléfono <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="telefono" name="telefono" required class="w-full input-premium bg-gray-50 focus:bg-white text-sm" placeholder="Tu teléfono">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" required class="w-full input-premium bg-gray-50 focus:bg-white text-sm" placeholder="tu@email.com">
+                            </div>
+
+                            <div>
+                                <label for="servicio" class="block text-sm font-medium text-gray-700 mb-2">Tipo de Servicio <span class="text-red-500">*</span></label>
+                                <select id="servicio" name="servicio" required class="w-full input-premium bg-gray-50 focus:bg-white text-sm text-gray-600 appearance-none">
+                                    <option value="" disabled selected>Selecciona un servicio...</option>
+                                    <option value="comunidades">Limpieza de Comunidades</option>
+                                    <option value="domicilios">Limpieza de Domicilios</option>
+                                    <option value="oficinas">Limpieza de Oficinas y Empresas</option>
+                                    <option value="hosteleria">Limpieza en Hostelería</option>
+                                    <option value="garajes">Limpieza de Garajes</option>
+                                    <option value="vapor">Limpieza con Vapor</option>
+                                    <option value="obra">Limpieza Fin de Obra</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje o detalles <span class="text-red-500">*</span></label>
+                                <textarea id="mensaje" name="mensaje" rows="4" required class="w-full input-premium bg-gray-50 focus:bg-white text-sm resize-none" placeholder="Explícanos qué necesitas (m2, frecuencia...)"></textarea>
+                            </div>
+
+                            <div class="pt-2">
+                                <label class="flex items-start gap-3 cursor-pointer group">
+                                    <input type="checkbox" id="rgpd" name="rgpd" required class="mt-1 w-4 h-4 text-brand-green border-gray-300 rounded focus:ring-brand-green">
+                                    <span class="text-sm text-gray-500 group-hover:text-gray-700 transition-colors">
+                                        He leído y acepto el <a href="aviso-legal.html" class="font-medium text-brand-teal hover:underline">aviso legal</a> y la <a href="politica-de-privacidad.html" class="font-medium text-brand-teal hover:underline">política de privacidad</a>. Consiento el tratamiento de mis datos para la gestión de este presupuesto. <span class="text-red-500">*</span>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-brand-green to-brand-teal text-white font-bold py-4 px-6 rounded-lg transition-transform hover:-translate-y-1 shadow-lg hover:shadow-xl mt-4">
+                                Enviar Solicitud de Presupuesto
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            &copy; 2026 Servicios Integrales Gaitán S.L. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

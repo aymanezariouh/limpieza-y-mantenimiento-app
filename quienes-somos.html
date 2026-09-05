@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos | Limpiezas Gaitán</title>
+    <meta name="description" content="Conoce la historia y los valores de Limpiezas Gaitán. Más de 12 años de experiencia ofreciendo servicios profesionales de limpieza en Gipuzkoa.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#10b981',
+                            teal: '#06b6d4',
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(to right, #10b981, #06b6d4); }
+        
+        .nav-link { position: relative; padding-bottom: 4px; color: #475569; transition: color 0.3s ease; font-weight: 500; font-size: 0.875rem; letter-spacing: 0.05em; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #10b981; transition: width 0.3s ease; }
+        .nav-link:hover { color: #0f172a; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #0f172a; }
+        
+        .lang-pill { transition: all 0.3s ease; opacity: 0.7; }
+        .lang-pill:hover { opacity: 1; transform: translateX(5px); }
+    </style>
+</head>
+<body class="bg-brand-light text-gray-700 antialiased relative">
+
+    <!-- 1. Floating Action Bars -->
+    <!-- Left: Languages -->
+    <div class="fixed left-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 pl-2 group">
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">EU</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">FR</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">IT</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-gray-700">EN</div>
+        <div class="lang-pill w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-50 text-sm font-bold text-brand-green ring-2 ring-brand-green/20">ES</div>
+    </div>
+
+    <!-- Right: Social & Back to top -->
+    <div class="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-600 hover:text-blue-600 hover:scale-110 transition-all duration-300"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-600 hover:text-pink-500 hover:scale-110 transition-all duration-300"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+    </div>
+
+    <button id="back-to-top" class="fixed right-4 bottom-8 z-50 bg-gradient-to-r from-brand-green to-brand-teal text-white p-3.5 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0 invisible">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- 2. Header & Branding -->
+    <header class="glass-nav border-b border-gray-100 sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-brand-green/10 to-brand-teal/10 group-hover:scale-105 transition-transform">
+                        <i data-lucide="droplets" class="w-7 h-7 text-brand-green absolute"></i>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="text-2xl font-bold text-brand-dark tracking-tight">Limpiezas <span class="text-gradient">Gaitán</span></span>
+                        <span class="text-[10px] font-semibold text-gray-400 tracking-widest uppercase mt-1">Servicios Integrales</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link uppercase">Inicio</a>
+                    <a href="quienes-somos.html" class="nav-link active uppercase">Quiénes Somos</a>
+                    <a href="servicios.html" class="nav-link uppercase">Servicios</a>
+                    <a href="covid.html" class="nav-link uppercase">Covid-19</a>
+                    <a href="blog.html" class="nav-link uppercase">Blog</a>
+                    <a href="contacto.html" class="nav-link uppercase">Contacto</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="hidden lg:block">
+                    <a href="contacto.html" class="px-6 py-2.5 rounded-full bg-brand-dark text-white font-medium text-sm hover:bg-gray-800 transition-colors shadow-md">
+                        Presupuesto
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-dark hover:text-brand-green p-2 transition-colors">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0 origin-top">
+            <div class="px-6 py-6 space-y-4">
+                <a href="index.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Inicio</a>
+                <a href="quienes-somos.html" class="block text-lg font-bold text-brand-green">Quiénes Somos</a>
+                <a href="servicios.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Servicios</a>
+                <a href="contacto.html" class="block text-lg font-medium text-gray-600 hover:text-brand-green">Contacto</a>
+                <div class="pt-4 mt-2 border-t border-gray-100">
+                    <a href="contacto.html" class="block text-center px-6 py-3 rounded-full bg-brand-dark text-white font-medium hover:bg-gray-800">
+                        Pedir Presupuesto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pb-24">
+        <!-- Header Section -->
+        <section class="bg-white py-16 border-b border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-brand-dark mb-6">Nuestra <span class="text-gradient">Historia</span></h1>
+                <p class="text-lg text-gray-500 font-light max-w-2xl mx-auto">Conoce a las personas detrás de Servicios Integrales Gaitán S.L., una empresa cimentada en la confianza, el trabajo duro y el respeto por nuestro entorno.</p>
+            </div>
+        </section>
+
+        <!-- Detailed Story -->
+        <section class="py-20 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1574607383476-f517f260d30b?auto=format&fit=crop&q=80&w=1000" alt="Equipo de limpieza profesional" class="rounded-3xl shadow-xl w-full h-auto object-cover">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6">Raíces en Errenteria</h2>
+                        <p class="text-gray-600 mb-6 font-light leading-relaxed">
+                            Servicios Integrales de Limpieza Gaitán S.L. es una pequeña empresa familiar constituida en Errenteria. Nuestros orígenes nacen del esfuerzo y la dedicación tras haber trabajado por cuenta ajena durante más de 12 años en el sector de la limpieza.
+                        </p>
+                        <p class="text-gray-600 mb-6 font-light leading-relaxed">
+                            Esta década de experiencia nos permitió desarrollar profundos conocimientos técnicos y humanos para poder realizar esta labor con los estándares más altos, ofreciendo asistencia de primer nivel a particulares y empresas.
+                        </p>
+                        <p class="text-gray-600 font-light leading-relaxed">
+                            Hoy, formamos un excelente equipo de profesionales: personas sencillas, vocacionales y completamente dedicadas a la excelencia en el trabajo diario.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Breakdown -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-brand-dark">Nuestros Valores Fundamentales</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-brand-light p-8 rounded-2xl border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-teal">
+                            <i data-lucide="shield-check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-4">Responsabilidad Profesional</h3>
+                        <p class="text-gray-500 font-light text-sm">Cumplimos estrictamente con los plazos, protocolos de seguridad y normativas laborales vigentes.</p>
+                    </div>
+                    
+                    <div class="bg-brand-light p-8 rounded-2xl border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-teal">
+                            <i data-lucide="handshake" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-4">Confianza Local</h3>
+                        <p class="text-gray-500 font-light text-sm">Somos tus vecinos en Gipuzkoa. Trabajamos para mejorar los espacios de nuestra comunidad con total transparencia.</p>
+                    </div>
+                    
+                    <div class="bg-brand-light p-8 rounded-2xl border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-teal">
+                            <i data-lucide="users" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-4">Equipo Cualificado</h3>
+                        <p class="text-gray-500 font-light text-sm">Invertimos constantemente en la formación de nuestro personal en el uso de nueva maquinaria y técnicas ecológicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecological Commitment -->
+        <section class="py-20 bg-brand-dark text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#10b981 1px, transparent 1px); background-size: 30px 30px;"></div>
+            
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="inline-flex p-4 bg-brand-green/20 rounded-full text-brand-green mb-8">
+                    <i data-lucide="leaf" class="w-12 h-12"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Nuestro Compromiso Ecológico</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-8">
+                    En Limpiezas Gaitán estamos plenamente concienciados con la protección del medio ambiente. Todos nuestros procesos de higienización emplean en exclusiva <strong>productos ecológicos biodegradables, no tóxicos y autorizados por el Ministerio de Sanidad y la Organización Mundial de la Salud (OMS)</strong>.
+                </p>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+                    De este modo, garantizamos no solo unos resultados de limpieza inmejorables, sino también la protección absoluta de la salud de nuestros empleados, de nuestros clientes y del planeta que compartimos.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            &copy; 2026 Servicios Integrales Gaitán S.L. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
