@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 toast.classList.add('opacity-0', 'invisible', 'translate-y-[-20px]');
             }, 4000);
         });
+    }
+
     // 5. Contact Form URL Pre-fill
     const urlParams = new URLSearchParams(window.location.search);
     const servicioParam = urlParams.get('servicio');
